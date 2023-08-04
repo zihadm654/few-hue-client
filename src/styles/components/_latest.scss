@@ -1,0 +1,61 @@
+@use '../utility/mixins' as *;
+@use '../utility/colors' as *;
+.latest {
+  padding: 2rem 4rem 7rem 4rem;
+  &__title {
+    text-align: center;
+    padding-bottom: 4rem;
+  }
+  .carousel {
+    // padding: 1rem;
+    .card {
+      border: none;
+      &__img {
+        img {
+          height: 85%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .card__desc {
+        padding: 1rem;
+        p {
+          text-align: start;
+        }
+        .prices {
+          @include flex(flex-start);
+          .main__price {
+            text-decoration: line-through;
+          }
+          .discount {
+            color: $primaryColor;
+            padding: 0.4rem;
+          }
+        }
+      }
+    }
+    // @include media(sm) {
+    //   padding: 2rem;
+    // }
+    // @include media(md) {
+    //   padding: 2.5rem;
+    // }
+  }
+}
+.slick-dots {
+  bottom: -1rem !important;
+}
+.slick-prev,
+.slick-next {
+  z-index: 999;
+  &::before {
+    font-size: 3.5rem !important;
+    color: #000 !important;
+  }
+}
+.slick-prev {
+  left: -1.5rem !important;
+}
+.slick-next {
+  right: -0.5rem !important;
+}

@@ -1,0 +1,48 @@
+@use "../utility/mixins" as *;
+@use "../utility/variables" as *;
+
+.phenomena {
+  margin: 3rem 0;
+  padding: 3rem 4rem;
+  @include flex(center);
+  gap: 4rem;
+  &__img {
+    flex: 1;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__desc {
+    flex: 1;
+    padding: 1rem;
+    h2 {
+      padding: 2rem 0;
+      width: 80%;
+      @include media(md) {
+        font-size: $xlr;
+      }
+    }
+  }
+  @include media(sm) {
+    flex-direction: column;
+    padding: 3rem 2rem;
+    &__desc {
+      padding: 0;
+      h2 {
+        font-size: $xlr;
+      }
+    }
+  }
+  @include media(md) {
+    flex-direction: column;
+    padding: 2.5rem;
+    &__desc {
+      padding: 0;
+      h2 {
+        font-size: $xlr;
+      }
+    }
+  }
+}

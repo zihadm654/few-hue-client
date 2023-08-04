@@ -1,0 +1,53 @@
+@use '../utility/variables' as v;
+@use '../utility/mixins' as m;
+@use '../utility/colors' as c;
+h1 {
+  font-size: v.$xxlr;
+  font-weight: 700;
+  line-height: 1.2;
+  @include m.media(xxlg) {
+    font-size: v.$xxxlr;
+  }
+}
+h2 {
+  font-size: v.$sbtl;
+  font-weight: 500;
+  line-height: 1.2;
+  @include m.media(xxlg) {
+    font-size: v.$xxlr;
+  }
+}
+h3 {
+  font-size: v.$xlr;
+  line-height: 1.1;
+  font-weight: 500;
+  @include m.media(xxlg) {
+    font-size: v.$sbtl;
+  }
+}
+h4 {
+  line-height: 1;
+  font-size: v.$lr;
+  font-weight: 500;
+  @include m.media(xxlg) {
+    font-size: v.$xlr;
+  }
+}
+h5 {
+  line-height: 1;
+  font-size: v.$p;
+  font-weight: 500;
+  @include m.media(xxlg) {
+    font-size: v.$md;
+  }
+}
+p {
+  font-size: v.$p;
+  color: c.$fontColor;
+  @include m.media(xxlg) {
+    font-size: v.$md;
+  }
+}
+a {
+  font-size: v.$p;
+}

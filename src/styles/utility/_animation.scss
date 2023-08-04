@@ -1,0 +1,30 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@keyframes progress {
+  from {
+    width: 0em;
+  }
+  to {
+    background-color: red;
+    width: 1.5em;
+  }
+}
+@keyframes hamburger {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    top: 80%;
+    opacity: 1;
+  }
+}

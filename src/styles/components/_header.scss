@@ -1,0 +1,148 @@
+@use '../utility/mixins' as *;
+@use '../utility/colors' as *;
+@use '../utility/variables' as *;
+
+.header {
+  position: relative;
+  max-width: 140rem;
+  z-index: 99999;
+  background-color: #fff;
+  @include media(xxlg) {
+    max-width: 160rem;
+  }
+  // header sticky to topbar
+  &.sticky {
+    padding: 1.5rem 4rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.311);
+  }
+  @include media(sm) {
+    padding: 1.5rem 2rem;
+    &.sticky {
+      padding: 1.3rem 2rem;
+    }
+  }
+  @include media(md) {
+    padding: 2rem 3rem;
+    &.sticky {
+      padding: 1.8rem 3rem;
+    }
+  }
+  @include media(lg) {
+    padding: 2.2rem 4rem;
+    &.sticky {
+      padding: 2rem 4rem;
+    }
+  }
+  padding: 2rem 4rem;
+  width: 100%;
+  position: fixed;
+  @include flex(space-between);
+  transition: padding 300ms ease-out;
+  // nav links
+  .links {
+    position: relative;
+    @include media(sm) {
+      display: none;
+    }
+    @include media(md) {
+      display: none;
+    }
+    // menu open
+    &.active {
+      @include flex(flex-start);
+      flex-direction: column;
+      align-items: flex-start;
+      position: absolute;
+      top: 80%;
+      left: 0%;
+      width: 100%;
+      z-index: -1;
+      background-color: #fff;
+      padding: 1rem 2rem;
+      padding-bottom: 5rem;
+      animation: hamburger 300ms alternate;
+      @include media(md) {
+        padding: 2rem 3rem;
+      }
+      li {
+        width: 100%;
+        padding: 1rem 0;
+        border-bottom: 1px solid $fontColor;
+        a {
+          color: $fontColor;
+          font-size: $md;
+        }
+      }
+    }
+    @include flex(center);
+    li {
+      padding-right: 2.5rem;
+      list-style: none;
+      a {
+        font-weight: 500;
+        color: $fontColor;
+        transition: color 200ms ease-out;
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+  // brand logo
+  .logo {
+    @include media(lg) {
+      flex-grow: 0.1;
+    }
+    @include media(xlg) {
+      flex-grow: 0.1;
+    }
+    flex-grow: 0.1;
+    img {
+      height: 4rem;
+    }
+  }
+  // cart & hamburger
+  .menu {
+    @include media(sm) {
+      display: flex;
+    }
+    @include media(md) {
+      display: flex;
+    }
+    cursor: pointer;
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+    @include flex(center);
+    display: none;
+    //active state
+    &.active {
+      &::before {
+        transform: translateY(0) rotate(45deg);
+        box-shadow: 0 0 #555;
+      }
+      &::after {
+        transform: translateY(0) rotate(-45deg);
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 3.2rem;
+      height: 0.2rem;
+      background: #555;
+      transform: translateY(-1rem);
+      box-shadow: 0 1rem #555;
+      transition: 300ms;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 3.2rem;
+      height: 0.2rem;
+      background: #555;
+      transform: translateY(1rem);
+      transition: 300ms;
+    }
+  }
+}

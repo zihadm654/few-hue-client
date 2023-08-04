@@ -1,0 +1,79 @@
+@use "../utility/mixins" as *;
+@use "../utility/variables" as *;
+@use "../utility/colors" as *;
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 4rem;
+  position: relative;
+  @include media(sm) {
+    padding: 2rem;
+  }
+  @include media(md) {
+    padding: 2.5rem;
+  }
+  &__desc {
+    p {
+      color: #fff;
+      padding: 0.5rem 0;
+    }
+    input {
+      margin: 1.7rem 0;
+      padding: 1rem;
+      min-width: 33rem;
+      outline: none;
+      font-size: medium;
+    }
+    button {
+      background-color: #ffffff5e;
+      font-size: medium;
+      padding: 1rem 2rem;
+      outline: none;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+    }
+  }
+  &__links {
+    margin-top: 3rem;
+    padding: 2rem 0;
+    ul {
+      @include flex(flex-start);
+      flex-wrap: wrap;
+      li {
+        &:not(:first-child) {
+          @include media(sm) {
+            padding: 0;
+          }
+          @include media(md) {
+            padding: 0;
+          }
+          padding: 0 2rem;
+        }
+        list-style: none;
+        margin: 1rem 0;
+        a {
+          color: #aaaaaa;
+          font-size: $p;
+          transition: color 200ms ease-out;
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+    @include media(sm) {
+      ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    @include media(md) {
+      ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+}

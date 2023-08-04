@@ -1,0 +1,107 @@
+@use '../utility/colors' as *;
+@use '../utility/mixins' as *;
+@use '../utility/variables' as *;
+.product__details {
+  min-height: 80vh;
+  padding: 8rem 4rem 4rem 4rem;
+  @include media(sm) {
+    padding: 7rem 2rem 2.5rem 2rem;
+  }
+  .product {
+    @include flex(space-between);
+    gap: 3rem;
+    @include media(sm) {
+      flex-direction: column;
+    }
+    @include media(md) {
+      flex-direction: column;
+    }
+    .tilt {
+      padding: 2rem !important;
+      flex: 1;
+      .product__img {
+        img {
+          height: 48rem;
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+    .product__info {
+      flex: 1;
+      .price {
+        padding: 1rem 0;
+      }
+      .desc,
+      .details {
+        margin-bottom: 1.5rem;
+        h5 {
+          font-weight: 400;
+          font-size: 2.1rem;
+          padding-bottom: 1.2rem;
+        }
+      }
+      .variations {
+        margin-top: 2rem;
+        table-layout: fixed;
+        border-collapse: separate !important;
+        color: #282828;
+        width: 100%;
+        border: 0 none;
+        td {
+          position: relative;
+          border-top: 1px solid #dadada;
+          border-right: 1px solid #dadada;
+          border-left: 1px solid #dadada;
+          vertical-align: middle;
+          background-clip: padding-box;
+          font-weight: inherit;
+          vertical-align: top;
+          text-align: left;
+        }
+        // .quantity {
+        //   .label {
+        //     width: 15%;
+        //   }
+        //   .value {
+        //     @include flex(center);
+        //   }
+        //   p {
+        //     margin: 0 1rem;
+        //   }
+        //   button {
+        //     padding: 0.5rem 0;
+        //     width: 35%;
+        //     font-size: 2rem;
+        //   }
+        // }
+        .label {
+          font-size: $p;
+          width: 35%;
+          line-height: 20px;
+          padding: 1rem 1.6rem;
+          border-right: 0 none;
+        }
+        .value {
+          padding-left: 16px;
+          border-left: 0 none;
+          select {
+            box-shadow: none;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      button {
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 1.5rem 5rem;
+        background-color: $dominant;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

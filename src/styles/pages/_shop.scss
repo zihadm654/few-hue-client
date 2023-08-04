@@ -1,0 +1,121 @@
+@use '../utility/mixins' as *;
+@use '../utility/colors' as *;
+.shop {
+  @include flex(space-between);
+  align-items: flex-start;
+  overflow: hidden;
+  @include media(sm) {
+    flex-direction: column;
+  }
+  @include media(md) {
+    flex-direction: column;
+  }
+}
+.products__container {
+  padding: 2rem 4rem;
+  margin-top: 6.5rem;
+  width: 100%;
+  @include media(sm) {
+    padding: 2rem;
+  }
+  flex: 1;
+  nav {
+    .location {
+      h3 {
+        font-weight: 700;
+        span {
+          color: transparent;
+          -webkit-text-stroke: 0.2rem #000;
+        }
+      }
+    }
+  }
+}
+.catagory__lists {
+  padding: 0 2rem;
+}
+.products__container {
+  nav {
+    position: relative;
+    @include flex(space-between);
+    padding: 0.5rem 0 2rem 0;
+  }
+}
+.custom-select {
+  position: relative;
+  @include flex(center);
+  label {
+    font-size: 1.65rem;
+    margin-right: 0.7rem;
+  }
+  select {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    margin: 0;
+    font-size: 1.6rem;
+    outline: none;
+    border: 0;
+    background: #fff;
+    cursor: pointer;
+  }
+  .custom-arrow {
+    position: absolute;
+    top: 0;
+    right: 0%;
+    display: block;
+    background: $fontColor;
+    height: 100%;
+    width: 2.3rem;
+    pointer-events: none;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &::before {
+      border-left: 0.5rem solid transparent;
+      border-right: 0.5rem solid transparent;
+      border-bottom: 0.5rem solid #fff;
+      top: 30%;
+    }
+    &::after {
+      border-left: 0.5rem solid transparent;
+      border-right: 0.5rem solid transparent;
+      border-top: 0.5rem solid rgb(255, 255, 255);
+      top: 60%;
+    }
+  }
+}
+.products {
+  @include grid();
+  min-height: 70vh;
+  .product {
+    grid-column: span 4;
+    img {
+      height: 26rem;
+      width: 100%;
+      object-fit: contain;
+    }
+    &__info {
+      padding: 2rem 0;
+      .price {
+        padding-top: 0.5rem;
+      }
+    }
+  }
+  @include media(sm) {
+    gap: 2rem;
+    .product {
+      grid-column: 1/13;
+    }
+  }
+}
+.load__btn {
+  @include flex(center);
+  font-size: 1.4rem;
+}

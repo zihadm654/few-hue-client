@@ -1,0 +1,121 @@
+@use '../utility/mixins' as *;
+@use '../utility/variables' as *;
+@use '../utility/colors' as *;
+.hero {
+  position: relative;
+  padding: 7.5rem 4rem 2rem 4rem;
+  height: 105vh;
+  @include grid;
+  gap: 0;
+  overflow: hidden;
+  @include media(sm) {
+    padding: 7.5rem 0 0 0;
+  }
+  @include media(md) {
+    padding: 7.5rem 0 0 0;
+  }
+  &__left {
+    grid-column: 1/8;
+    background-color: rgb(205, 205, 205);
+  }
+  &__right {
+    grid-column: 8/13;
+    background-color: rgb(0, 0, 0);
+    .circle__text {
+      position: absolute;
+      @include flex(center);
+      bottom: 20%;
+      right: 23%;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      @include media(sm) {
+        right: 10%;
+        bottom: 28%;
+      }
+      @include media(md) {
+        right: 20%;
+        bottom: 25%;
+      }
+      @include media(lg) {
+        right: 20%;
+        bottom: 25%;
+      }
+      button {
+        position: absolute;
+        height: 8rem;
+        width: 8rem;
+        border: none;
+        outline: none;
+        border-radius: 50%;
+        a {
+          font-size: 1.3rem;
+        }
+      }
+      img {
+        height: 13rem;
+        width: 13rem;
+        object-fit: cover;
+        animation: rotate 4s linear infinite;
+      }
+    }
+  }
+  &__img {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    @include media(sm) {
+      left: 0%;
+    }
+    @include media(md) {
+      left: 0%;
+    }
+    @include media(xxlg) {
+      left: 13%;
+    }
+    a {
+      width: 100%;
+      img {
+        height: 75vh;
+        width: 75vw;
+        object-fit: cover;
+        @include media(xxlg) {
+          height: 71vh;
+          width: 55vw;
+        }
+        @include media(sm) {
+          height: 71vh;
+          width: 75vw;
+        }
+        @include media(md) {
+          height: 71vh;
+          width: 80vw;
+        }
+      }
+      .top {
+        color: #fff;
+        bottom: 0;
+        top: 18%;
+      }
+      .bottom {
+        color: transparent;
+        -webkit-text-stroke: 0.2rem #fff;
+      }
+      h1 {
+        position: absolute;
+        bottom: 48%;
+        right: -30%;
+        padding-right: 5%;
+        @include media(sm) {
+          right: -4%;
+        }
+        @include media(md) {
+          right: 5%;
+        }
+        @include media(lg) {
+          right: 0%;
+        }
+      }
+    }
+  }
+}

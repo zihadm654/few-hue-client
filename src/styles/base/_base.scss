@@ -1,0 +1,56 @@
+@use '../utility/mixins' as m;
+@use '../utility/variables' as v;
+@use '../utility/colors' as c;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  @include m.media(sm) {
+    font-size: 52%;
+  }
+  @include m.media(md) {
+    font-size: 54%;
+  }
+  @include m.media(lg) {
+    font-size: 58.25%;
+  }
+  @include m.media(xxlg) {
+    font-size: 66.25%;
+  }
+}
+body {
+  font-family: v.$main__font;
+  color: c.$dominant;
+}
+a {
+  color: c.$dominant;
+  text-decoration: none;
+}
+main {
+  position: relative;
+  max-width: 140rem;
+  margin: 0 auto;
+  @include m.media(xxlg) {
+    max-width: 160rem;
+  }
+}
+ul,
+ol {
+  margin-bottom: 0rem;
+  padding-left: 0rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+}

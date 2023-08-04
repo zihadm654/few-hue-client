@@ -1,0 +1,140 @@
+@use '../utility/mixins' as *;
+@use '../utility/colors' as *;
+@use '../utility/variables' as *;
+.cart__page {
+  padding: 8.5rem 4rem 4rem 4rem;
+  @include grid();
+  @include media(sm) {
+    padding: 8rem 2.5rem;
+  }
+  .cart__left {
+    grid-column: 1/9;
+    .cart__products {
+      height: 45vh;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+      .cart__product {
+        margin: 1rem 0;
+        @include flex(space-between);
+        .cart__product--left {
+          @include flex(flex-start);
+          .cart__product--img {
+            img {
+              height: 8rem;
+              width: 8rem;
+              object-fit: contain;
+            }
+          }
+          .cart__product--info {
+            margin-left: 2rem;
+            .product__quantity {
+              @include flex(flex-start);
+              .left__icon,
+              .right__icon {
+                @include flex(center);
+                cursor: pointer;
+                svg {
+                  font-size: $md;
+                }
+              }
+            }
+          }
+        }
+        .cart__product--right {
+          @include flex(flex-end);
+          flex-direction: column;
+          svg {
+            cursor: pointer;
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+    button {
+      background-color: transparent;
+      border: 1px solid $fontColor;
+      outline: none;
+      padding: 2rem;
+      font-size: $p;
+      color: $fontColor;
+      cursor: pointer;
+      width: 100%;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+  .cart__right {
+    grid-column: 9/13;
+    .accordian {
+      padding: 2rem;
+      border: 1px solid $fontColor;
+      .coupon {
+        cursor: pointer;
+        @include flex(space-between);
+        svg {
+          font-size: 2rem;
+        }
+      }
+      .sub {
+        &.active {
+          display: inline;
+        }
+        display: none;
+        transition: all 250ms ease-out;
+        input {
+          margin: 1rem 0;
+          width: 100%;
+          padding: 0.5rem;
+          outline: none;
+          border: 1px solid $fontColor;
+          font-size: $p;
+        }
+        button {
+          border: none;
+          outline: none;
+          width: 100%;
+          padding: 1rem 0;
+          background-color: $secondaryColor;
+          color: #fff;
+        }
+      }
+    }
+    .subtotal {
+      button {
+        margin-top: 1rem;
+        border: none;
+        outline: none;
+        width: 100%;
+        padding: 1rem 0;
+        background-color: $secondaryColor;
+        color: #fff;
+      }
+      margin-top: 2rem;
+      padding: 2rem;
+      border: 0.5px solid $fontColor;
+      .price,
+      .charge,
+      .tax,
+      .total {
+        padding: 0.5rem 0;
+        @include flex(space-between);
+      }
+    }
+  }
+  .cart__left,
+  .cart__right {
+    @include media(sm) {
+      grid-column: 1/13;
+      padding: 0;
+    }
+    @include media(md) {
+      grid-column: 1/13;
+      padding: 0;
+    }
+    padding: 2.5rem 0;
+    h4 {
+      padding: 1.5rem 0;
+    }
+  }
+}

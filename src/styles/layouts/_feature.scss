@@ -1,0 +1,74 @@
+@use "../utility/mixins" as *;
+.feature__group {
+  padding: 4rem;
+  @include media(sm) {
+    padding: 2rem;
+  }
+  @include media(md) {
+    padding: 2.5rem;
+  }
+  .second {
+    .feature__desc {
+      padding: 0 2rem 0 0;
+    }
+  }
+  .feature {
+    @include flex(space-between);
+    padding: 4rem 0;
+    &__img {
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      height: 55rem;
+      width: 100%;
+      flex: 0.68;
+    }
+    &__desc {
+      flex: 0.32;
+      padding: 1rem 3rem;
+      h3 {
+        font-weight: 500;
+      }
+      p {
+        line-height: 1.6;
+        padding: 3rem 0;
+      }
+    }
+    @include media(sm) {
+      flex-direction: column;
+      padding: 2rem 0;
+      &__img {
+        flex: 1;
+      }
+      .second {
+        &__img {
+          order: 1;
+        }
+      }
+      &__desc {
+        order: 2;
+        padding: 1rem 0;
+        flex: 1;
+      }
+    }
+    @include media(md) {
+      flex-direction: column;
+      padding: 2rem 0;
+      &__img {
+        flex: 1;
+      }
+      .second {
+        &__img {
+          order: 1;
+        }
+      }
+      &__desc {
+        order: 2;
+        padding: 1rem 0;
+        flex: 1;
+      }
+    }
+  }
+}
